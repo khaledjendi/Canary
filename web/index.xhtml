@@ -1,12 +1,215 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
     <h:head>
-        <title>Facelet Title</title>
+
+        <title>Currency Converter</title>
     </h:head>
+
+
+
     <h:body>
-        Hello from Facelets
+        <f:facet name="last">
+            <h:outputStylesheet library="css" name="mainStyle.css" />
+        </f:facet>
+        <h:form>
+            <p:growl id="growl" globalOnly="false" showDetail="false" life="3000" />
+            <div class="logo">CURR<span>i</span>ENCY</div>
+            <div class="convertion-block">
+                <h1>Smart Currency Converter</h1>
+
+                <div style=" width: 155px ;margin: 0 auto;">
+                    <h:inputText id="amount" a:placeholder="Amount" value="#{currencyConverter.amount}" required="true" requiredMessage="Please, fill the amount!" converterMessage="Please, enter digits only!" />
+                    <p:message for="amount" />
+                </div>
+
+                <div style="float: left">
+                    <p:selectOneMenu id="fromCurrency" class="" value="#{currencyConverter.fromCurrency}" style="width:170px">
+                        <f:selectItem itemLabel="From Currency" itemValue="" noSelectionOption="true" />
+                        <f:selectItems value="#{currencyConverter.currencies}" />
+                    </p:selectOneMenu>
+                </div>
+
+                <div style="float: right; margin-bottom: 20px;">
+                    <p:selectOneMenu id="toCurrency" class="" value="#{currencyConverter.toCurrency}" style="width:170px">
+                        <f:selectItem itemLabel="To Currency" itemValue="" noSelectionOption="true" />
+                        <f:selectItems value="#{currencyConverter.currencies}" />
+                    </p:selectOneMenu>
+                </div>
+
+                <div style="margin-top: 90px;"> 
+                    <h1><h:outputText id="result" style="color: #ff656c" value="#{currencyConverter.convertionValue}" /></h1>
+                </div>
+
+                <h:commandButton value="Convert" action="#{currencyConverter.action()}" />
+
+
+            </div>
+        </h:form>
+
+        <div id="credits"></div>
+
+        <h:outputScript library="primefaces" name="jquery/jquery.js"/>
+
+        <h:outputScript library="js" name="jquery.titlesequence.js" />
+        <script type="text/javascript">
+            var sequence = [
+                {
+                    content: '<h2 class="logo-h2">CURR<span>i</span>ENCY</h2>',
+                    id: 'scroll0',
+                    css: {left: 0, top: '250px'},
+                    animate: {top: '30px'},
+                    duration: 3000,
+                    easing: 'linear',
+                    pause: 1200
+                },
+                {
+                    selector: '#scroll0',
+                    animate: {opacity: 0},
+                    duration: 2000,
+                    pause: 900
+                },
+                /*{
+                 content: 'This homework<br />is done<br />by:',
+                 id: 'scroll1',
+                 css: {left: 0, top: '250px'},
+                 animate: {top: '30px'},
+                 duration: 3000,
+                 easing: 'linear',
+                 pause: 1200
+                 },
+                 {
+                 selector: '#scroll1',
+                 animate: {opacity: 0},
+                 duration: 2000,
+                 pause: 900
+                 },*/
+                {
+                    content: '',
+                    id: 'group1',
+                    css: {height: '300px', opacity: 0}
+                },
+                {
+                    container: '#group1',
+                    content: 'Done by students:',
+                    css: {left: '30px', top: '16px'},
+                },
+                {
+                    selector: '#group1',
+                    animate: {opacity: 1},
+                    duration: 2000,
+                    pause: 900
+                },
+                {
+                    container: '#group1',
+                    content: '&bull; Khaled Jendi',
+                    css: {left: '38px', top: '150px', opacity: 0},
+                    animate: {opacity: 1, top: '44px'},
+                    duration: 1200,
+                    pause: 500
+                },
+                {
+                    selector: '#group1',
+                    animate: {width: 0},
+                    duration: 1200,
+                    pause: 500
+                },
+                {
+                    delete: '#group1',
+                },
+                {
+                    content: '',
+                    id: 'group2',
+                    css: {height: '300px', opacity: 0}
+                },
+                {
+                    container: '#group2',
+                    content: 'Contact us on:',
+                    css: {left: '30px', top: '16px'},
+                },
+                {
+                    selector: '#group2',
+                    animate: {opacity: 1},
+                    duration: 2000,
+                    pause: 900
+                },
+                {
+                    container: '#group2',
+                    content: '&bull; khalednet@gmail.com',
+                    css: {left: '38px', top: '150px'},
+                    animate: {top: '44px'},
+                    duration: 1200,
+                    pause: 500
+                },
+                {
+                    selector: '#group2',
+                    animate: {width: 0},
+                    duration: 1200,
+                    pause: 500
+                },
+                {
+                    delete: '#group2',
+                },
+                {
+                    content: '',
+                    id: 'bg',
+                    css: {top: 0, left: 0, width: '248px', height: '186px', opacity: 0},
+                    animate: {opacity: 1},
+                    duration: 300
+                },
+                {
+                    content: '',
+                    id: 'colour1',
+                    css: {height: '160px'},
+                    pause: 800
+                },
+                {
+                    container: '#colour1',
+                    content: "Thanks",
+                    css: {left: '-150px', top: '22px', color: '#ff656c', opacity: '0.7'},
+                    animate: {left: 0},
+                    duration: 900,
+                    no_wait: true
+                },
+                {
+                    container: '#colour1',
+                    content: "for",
+                    css: {left: '150px', top: '66px', color: '#fff', opacity: '0.7'},
+                    animate: {left: 0},
+                    duration: 900,
+                    no_wait: true
+                },
+                {
+                    container: '#colour1',
+                    content: "Watching",
+                    css: {left: '150px', top: '110px', color: '#ff656c', opacity: '0.7'},
+                    animate: {left: 0},
+                    duration: 900,
+                    no_wait: true
+                },
+                {
+                    selector: '#colour1',
+                    animate: {opacity: 50},
+                    duration: 19600,
+                    pause: 800
+                },
+                {
+                    delete: '#colour1'
+                },
+                function (seq) {
+                    seq.next_cue();
+
+                }
+
+            ];
+            $('#credits').empty().titleSequence(sequence);
+        </script>
     </h:body>
 </html>
 
