@@ -1,0 +1,281 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author     : khaled
+*/
+
+@font-face {
+    font-family: bankGothicBold;
+    src: url("#{resource['fonts/BankGothicBold.ttf']}");
+}
+
+@font-face {
+    font-family: bankGothicRegular;
+    src: url("#{resource['fonts/BankGothicRegular.ttf']}");
+}
+
+@font-face {
+    font-family: centuryGothicBold;
+    src: url("#{resource['fonts/CenturyGothicBold.ttf']}");
+}
+
+@font-face {
+    font-family: centuryGothicRegular;
+    src: url("#{resource['fonts/CenturyGothicRegular.ttf']}");
+}
+
+@font-face {
+    font-family: helvetica;
+    src: url("#{resource['fonts/Helvetica.ttf']}");
+}
+
+body {
+    background: url("#{resource['images/bg.jpg']}") no-repeat fixed center center;
+    background-size: cover;
+    font-family: centuryGothicRegular;
+}
+
+.logo {
+    text-align: center;
+    color: #fff;
+    margin: 20px 0 20px 0; 
+    font-family: bankGothicBold;
+    font-size: 50px;
+    margin-right: 7px;
+    
+}
+
+.logo span{
+    color: #ff656c;
+    font-size: 50px;
+    font-family: helvetica;
+    font-weight: 700;
+    padding-left: 4px;
+}
+
+.logo-h2 {
+    text-align: center;
+    color: #fff;
+    font-family: bankGothicBold;
+    margin-right: 7px;
+    
+}
+
+.logo-h2 span{
+    color: #ff656c;
+    font-size: 40px;
+    font-family: helvetica;
+    font-weight: 700;
+    padding-left: 1px;
+}
+
+.convertion-block input:active, .convertion-block input:focus {
+    border: 1px solid #ff656c;
+}
+
+.convertion-block input[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background: #ff656c;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #e15960;
+    color: #fff;
+    font-size: 20px;
+    font-family: bankGothicBold;
+    outline: none;
+    cursor: pointer;
+}
+
+.convertion-block {
+    width: 500px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #ff656c;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.convertion-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.convertion-block input[type="text"] {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 0 50px 0 50px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #ff656c;
+}
+
+
+
+.convertion-block input[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background: #ff656c;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #e15960;
+    color: #fff;
+    font-size: 20px;
+    font-family: bankGothicBold;
+    outline: none;
+    cursor: pointer;
+}
+
+.convertion-block input[type="submit"]:hover {
+    background: #ff7b81;
+}
+
+
+.convertion-block input:active, .convertion-block input:focus {
+    border: 1px solid #ff656c;
+}
+
+.ui-message-error-detail{
+    font-family: centuryGothicRegular;
+    font-size: 14px;
+    
+}
+.ui-message {
+    margin-bottom: 10px;
+}
+
+.ui-message-error-icon{
+    background: url("#{resource['images/error_16_2.png']}");
+    margin-top: 3px;
+}
+
+.login-type{
+    margin-bottom: 10px;
+}
+
+.ui-button-text{
+    font-family: centuryGothicRegular;
+    font-size: 14px;
+}
+
+.ui-state-highlight {
+    background-color: #562929;
+    border: 1px solid #444;
+}
+
+.ui-growl-title{
+    font-family: centuryGothicRegular;
+    font-size: 16px;
+}
+
+.ui-growl-image, .ui-growl-image-error{
+    background-image: url("#{resource['images/error.png']}")
+}
+
+.ui-growl-item-container{
+    border-radius: 5px;
+}
+
+.ui-selectonemenu{
+    padding-right: 1.65em;
+}
+
+.ui-state-hover, .ui-state-focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow:none;
+}
+
+.ui-icon{
+    margin-top: 5px;
+}
+
+.ui-widget{
+    font-family: centuryGothicRegular;
+    font-size: 14px;
+}
+.drop-down-country {
+   
+}
+
+
+#credits {
+  position: relative;
+  width: 300px;
+  height: 186px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fff;
+}
+
+#credits div {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  line-height: 135%;
+}
+
+#scroll1 {
+  width: 100%;
+  text-align: center;
+  font-family: centuryGothicRegular;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 160%;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+#group1 {
+  color: #fff;
+  font-family: centuryGothicRegular;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 160%;
+}
+
+#group2 {
+  color: #fff;
+  font-family: centuryGothicRegular;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 160%;
+}
+
+#colour1 {
+  font-family: bankGothicBold;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  width: 240px;
+  
+}
+
+#fonts {
+  width: 240px;
+  height: 190px;
+  color: #fff;
+}
+
+#fonts div {
+  height: 90px;
+}
+
+.ui-icon-refresh1{
+    background-image: url("#{resource['images/refresh.png']}") !important;
+}
